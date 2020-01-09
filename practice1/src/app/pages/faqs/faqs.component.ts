@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./faqs.component.scss']
 })
 export class FaqsComponent implements OnInit {
+  flip = false;
 
   constructor() { }
 
   ngOnInit() {
   }
+clickEvent(){
+  alert('You clicked me, prepare to die!');
+}
+switch(v){
+  this.flip = !this.flip;
+  v.innerText = this.flip ? 'Off' : 'On';
+  }
+  
+  
+
 
 }

@@ -1,1 +1,7 @@
 
+<button #btn (dblclick)="clickEvent()" type="button" class="btn btn-dark">On</button>
+<p>Value in button is {{btn.innerText}}</p>
+<button #chicken (click)="switch(chicken)" type="button" class="btn btn-dark">Off</button>
+<div *ngIf = "flip">
+    <p>I am visible</p>
+</div>

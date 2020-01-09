@@ -1,23 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Student} from 'src/app/student';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  trash = [
+  trash: Student [] = [
     {
-      title: 'My Project 1', desc: 'Trash', nFO: 'something else'
+      fName : 'Jon',
+      lName : 'Sweart',
+      sName : 'jon',
+      pNumber : 4444444
     },
     {
-      title: 'My Project 2', desc: 'Trash 2', nFO: 'something else2'
-    },
-    {
-      title: 'My Project 3', desc: 'Trash 3', nFO: 'something else3'
+      fName : 'Lour',
+      lName : 'c',
+      sName :  'd',
+      pNumber : 4444444
     }
-  ];
-
+  ];  
   constructor() { }
 
   ngOnInit() {
