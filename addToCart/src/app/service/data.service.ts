@@ -53,16 +53,16 @@ return this.itemsInCart;
   emptyCart(){
     this.itemsInCart.length = 0;
   }
-  removeItemFromCart(id:string){
+  removeItemFromCart(itemToRemove: Iproducts){
     //search product and remove from items from cart
     //find the index location of product
-
+    const index = this.findItemInCart(itemToRemove);
   }
-  findIteminCart(id:Iproducts): number{
+  findItemInCart(id:Iproducts): number{
 const cartIndex = this.itemsInCart.indexOf(id);
     return;
   }
   itemsToRemove(){
-    
+
   }
 }

@@ -1,10 +1,23 @@
-<div class="container-fluid">
-    <div class="row">
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor='let cItem of cartItems'>{{cItem.pName}}</li>
-            <button type="button" (clikc)="removeCartItems" class="btn btn-danger">remove all</button>
-          </ul>
-          <button type="button" (clikc)="removeCartItem(cItem)" class="btn btn-danger">remove Item</button>
-
+<div class="container">
+    <div class="row" *ngFor="let cItem of cartItems">
+        <div class="col">
+            <div class="div list-group-item">
+                <div class="row">
+                    <div class="col-3">Put Image Here</div>
+                    <div class="col-3">
+                        {{cItem.pName}}
+                    </div>
+                    <div class="col-3">
+                        {{cItem.pDesc}}
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="btn btn-danger">Remove</button>
+                    </div>
+                </div>
+                <br>
+                
+                
+            </div>
+        </div>
     </div>
 </div>
