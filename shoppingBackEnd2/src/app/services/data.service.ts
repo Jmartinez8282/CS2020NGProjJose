@@ -13,7 +13,8 @@ export class DataService {
       pNameURL: 'NinjaStars',
       pDesc: 'Something to do with Ninja Stars',
       additionalInfo: 'They can cause a paper cut',
-      price: '$1.00'
+      price: '50.00',
+      quantity:0
     },
     {
       id: '2',
@@ -21,7 +22,8 @@ export class DataService {
       pNameURL: 'NinjaStars',
       pDesc: 'Something to do with Ninja Stars',
       additionalInfo: 'They can cause a paper cut',
-      price: 'Free'
+      price: '50.00',
+      quantity:0
     },
     {
       id: '3',
@@ -29,7 +31,8 @@ export class DataService {
       pNameURL: 'NinjaStars',
       pDesc: 'Something to do with Ninja Stars',
       additionalInfo: 'They can cause a paper cut',
-      price: '$1111.00'
+      price: '50.00',
+      quantity:0
     },
     {
       id: '4',
@@ -37,7 +40,8 @@ export class DataService {
       pNameURL: 'NinjaStars',
       pDesc: 'Something to do with Ninja Stars',
       additionalInfo: 'They can cause a paper cut',
-      price: '$111.00'
+      price: '50.00',
+      quantity:0
     },
     {
       id: '5',
@@ -45,7 +49,8 @@ export class DataService {
       pNameURL: 'NinjaStars',
       pDesc: 'Something to do with Ninja Stars',
       additionalInfo: 'They can cause a paper cut',
-      price: '$11.00'
+      price: '50.00',
+      quantity:0
     }
   ];
 
