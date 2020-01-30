@@ -34,4 +34,7 @@ cartTotal = 0;
 toggleList(){
   this.showList =!this.showList;
 }
+removeFromCart(item,index){
+  this.cartService.removeProduct(item,index);
+}
 }

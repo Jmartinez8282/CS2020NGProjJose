@@ -14,6 +14,20 @@ $cartTotal = new BehaviorSubject<number>(this.cartTotal);
 cartQuantity = 0;
 $cartQuanity = new BehaviorSubject<number>(this.cartQuantity);
   constructor() { }
+
+removeProduct(item,index){
+  this.cartItems.splice(index, 1);
+  const totalPrice = item.quantity * +item.price;
+  this.cartTotal -= totalPrice;
+  this.cartQuantity -= totalPrice;
+  this.cartQuantity -= item.quantity;
+
+this.$cartItems.next(this.cartItems);
+this.$cartTotal.next(this.cartTotal);
+this.$cartQuanity.next(this.cartQuantity);
+
+}
+
   addItemsToCart(item:IProduct){
     let cartItem = this.cartItems.find(x=> x.id === item.id);
     if (cartItem){
