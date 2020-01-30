@@ -10,6 +10,9 @@ export class CartService {
  public $cartItems = new BehaviorSubject<IProduct[]>(this.cartItems);
 cartTotal = 0;
 $cartTotal = new BehaviorSubject<number>(this.cartTotal);
+
+cartQuantity = 0;
+$cartQuanity = new BehaviorSubject<number>(this.cartQuantity);
   constructor() { }
   addItemsToCart(item:IProduct){
     let cartItem = this.cartItems.find(x=> x.id === item.id);
@@ -19,6 +22,7 @@ $cartTotal = new BehaviorSubject<number>(this.cartTotal);
         item.quantity = 1;
         this.cartItems.push(item);
     }
+     this.cartQuantity++;
         console.log(this.cartItems);
       
       
@@ -27,8 +31,9 @@ $cartTotal = new BehaviorSubject<number>(this.cartTotal);
     console.log(this.cartItems);
     this.$cartItems.next(this.cartItems);
     this.cartTotal += +item.price;
-    this.$cartItems.next(this.cartItems);
+  
     
     this.$cartTotal.next(this.cartTotal);
+    this.$cartQuanity.next(this.cartQuantity);
   }
 }

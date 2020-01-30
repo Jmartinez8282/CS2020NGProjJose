@@ -16,13 +16,18 @@ cartTotal = 0;
 
   ngOnInit() {
     this.cartService.$cartItems.subscribe(items => {
-      this.cartCount = items.length;
+     
       this.cartItems = items;
       
     });
     this.cartService.$cartTotal.subscribe( total => {
       
       this.cartTotal = total;
+      
+    });
+    this.cartService.$cartQuanity.subscribe( count => {
+      
+      this.cartCount = count;
       
     });
   }
