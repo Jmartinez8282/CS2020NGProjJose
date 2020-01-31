@@ -18,8 +18,8 @@ $cartQuanity = new BehaviorSubject<number>(this.cartQuantity);
 removeProduct(item,index){
   this.cartItems.splice(index, 1);
   const totalPrice = item.quantity * +item.price;
+  this.cartTotal = totalPrice;
   this.cartTotal -= totalPrice;
-  this.cartQuantity -= totalPrice;
   this.cartQuantity -= item.quantity;
 
 this.$cartItems.next(this.cartItems);
