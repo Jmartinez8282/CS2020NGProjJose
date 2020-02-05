@@ -11,13 +11,13 @@ import { CartService } from 'src/app/services/cart.service';
 export class ProductListComponent implements OnInit {
   productList: IProduct[];
 
-  constructor(private dService:DataService, private CardSerice: CartService) { }
+  constructor(private dService:DataService, private CartService: CartService) { }
 
   ngOnInit() {
     this.productList = this.dService.getProducts();
     console.log(this.productList);
   }
 addToCart(item){
-this.CardSerice.addItemsToCart(item);
+this.CartService.addItemsToCart(item);
 }
 }
