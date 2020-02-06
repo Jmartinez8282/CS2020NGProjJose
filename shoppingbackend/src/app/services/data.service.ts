@@ -6,17 +6,18 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
+  product: Product[];
  
-    6
+    
 
   constructor() { }
   getProducts():Product[]{
-    return this.products;
+    return this.product;
   }
 
   getItems(id: string):Observable<Product>{
     return of (
-    (this.products.find(
+    (this.product.find(
       product => product.id === id
     )
     ));
