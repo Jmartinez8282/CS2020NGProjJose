@@ -14,18 +14,24 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
   }
-SignUp(userName:string,passWord:string,fistName:string,lastName:string,email:string,confirmEmail:string,confirmPW:string){
-//we are going to compare password sore in our servi
+signUp(userName:string,passWord:string,firstName:string,lastName:string,email:string,confirmEmail:string,confirmPW:string){
+//check if email is confirmed
+//check if password is the same
+//
+
+  //we are going to compare password sore in our servi
+
+
 if ( email === confirmEmail && passWord.length > 3){
 if (passWord === confirmPW)
 if(this.dService.checkIfUserExists(userName)){
   alert ('User Name already Exists');
 
-}else
+}else{
 
 let addThisName: User={
  userName: userName,
- firstNam: firsName,
+ firstNam: firstName,
  lastName:lastName,
  eami:email,
  passWord: passWord 
