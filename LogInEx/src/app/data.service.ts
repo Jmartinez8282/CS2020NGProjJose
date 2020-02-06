@@ -20,11 +20,11 @@ if(passWord === this.userList[0].passWord){
 }
     return result;
   }
-checkIfUserExists(userName:string){
+checkIfUserExists(userName:string):boolean{
 ///going to search for username
 let result = false;
 
-if (this.userList.find(x => userName.toLowerCase() === x.userName) === undefined){
+if (this.userList.find(x => userName.toLowerCase() === x.userName) !== undefined){
 result = true;
 
 }
@@ -32,16 +32,18 @@ return result;
 
 }
 
-addUser(userAccount:User){
-  const userAccount:User = {
+addUser(uN:string,pW:string){
+  const userAccount: User = {
     userName:uN,
-    passWord:pW,
+    passWord:pW
 
   };
   this.userList.push(userAccount);
   localStorage.setItem('user',JSON.stringify(ths.userList));
   console.log(userAccount);
 }
+
+
 
 setUserList(){
   
