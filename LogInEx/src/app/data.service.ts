@@ -5,11 +5,7 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class DataService {
-userList: User[] = [
-  {
-    
-  }
-];
+userList: User[] = [];
   constructor() { }
   checkCred(userName: string,passWord: string):boolean{
 let result = false;
@@ -32,21 +28,21 @@ return result;
 
 }
 
-addUser(uN:string,pW:string){
-  const userAccount: User = {
-    userName:uN,
-    passWord:pW
+addUser(userAccount:User){
+  // const userAccount: User = {
+    // userName:uN.toLowerCase(),
+    // passWord:pW
 
-  };
-  this.userList.push(userAccount);
-  localStorage.setItem('user',JSON.stringify(ths.userList));
-  console.log(userAccount);
+  // };
+   this.userList.push(userAccount);
+  localStorage.setItem('user',JSON.stringify(this.userList));
+   console.log(userAccount);
 }
 
 
 
 setUserList(){
-  
+  if(JSON.parse(localStorage.getItem('user')))
   this.userList = JSON.parse(localStorage.getItem('user'));
 }
 }
