@@ -5,11 +5,7 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class DataService {
-userList: User[] = [
-  {
-    
-  }
-];
+userList: User[] = [];
   constructor() { }
   checkCred(userName: string,passWord: string):boolean{
 let result = false;
@@ -20,11 +16,11 @@ if(passWord === this.userList[0].passWord){
 }
     return result;
   }
-checkIfUserExists(userName:string){
+checkIfUserExists(userName:string):boolean{
 ///going to search for username
 let result = false;
 
-if (this.userList.find(x => userName.toLowerCase() === x.userName) === undefined){
+if (this.userList.find(x => userName.toLowerCase() === x.userName) !== undefined){
 result = true;
 
 }
@@ -33,18 +29,20 @@ return result;
 }
 
 addUser(userAccount:User){
-  const userAccount:User = {
-    userName:uN,
-    passWord:pW,
+  // const userAccount: User = {
+    // userName:uN.toLowerCase(),
+    // passWord:pW
 
-  };
-  this.userList.push(userAccount);
-  localStorage.setItem('user',JSON.stringify(ths.userList));
-  console.log(userAccount);
+  // };
+   this.userList.push(userAccount);
+  localStorage.setItem('user',JSON.stringify(this.userList));
+   console.log(userAccount);
 }
 
+
+
 setUserList(){
-  
+  if(JSON.parse(localStorage.getItem('user')))
   this.userList = JSON.parse(localStorage.getItem('user'));
 }
 }
