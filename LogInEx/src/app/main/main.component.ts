@@ -33,7 +33,7 @@ let addThisName: User={
   this.dService.addUser(userName,passWord);
 
 {
-
+///
 }
 }else{
   alert('an unexpected erro accoured.')
